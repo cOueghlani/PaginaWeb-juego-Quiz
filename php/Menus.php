@@ -7,7 +7,10 @@
 </header>
 <nav class='main' id='n1' role='navigation'>
   <span><a href='Layout.php'>Inicio</a></span>
-  <span><a href='enlace a AddQuestion/AddQuestionWithImage'> Insertar Pregunta</a></span>
+  <span><a href='QuestionFormWithImage.php'> Insertar Pregunta e Imagen</a></span>
+  <span><a href='QuestionFormHtml5.php'> Insertar Pregunta en HTML5</a></span>
+  <span><a href='QuestionForm.php'> Insertar Pregunta</a></span>
   <span><a href='Credits.php'>Creditos</a></span>
+
 </nav>
 

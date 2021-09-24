@@ -9,9 +9,13 @@
     <div>
 
       <h2>
-        Cristina Oueghlani --> Computación
-        Iñaki Inda --> Software
+        Cristina Oueghlani --> Computación<br/>
+        Iñaki Inda --> Software<br/>
       </h2>
+      
+      <img src = "../images/cristina.jpeg">
+      <img src = "../images/inaki.png">
+      
 
     </div>
   </section>
