@@ -14,7 +14,7 @@ $(document).ready(function () {
                 event.preventDefault();
             }
             else 
-               alert("Pregunta enviada con exito");
+               //alert("Pregunta enviada con exito");
                return;
         }
 
@@ -31,9 +31,3 @@ function validarcorreo()
     else
         return false;
 }
-
-
-
-
-
-

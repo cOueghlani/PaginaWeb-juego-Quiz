@@ -36,19 +36,19 @@
 
         //Insertar en una BD --> https://www.geeksforgeeks.org/how-to-insert-form-data-into-database-using-php/
 
-        // Taking all 8 values from the form data(inputi)
+        // Taking all 8 values from the form data(inputi) --> el name
         $cor = $_POST['correo'];
         $preg = $_POST['pregunta'];
-        $res1 = $_POST['resc'];
-        $res2 = $_POST['resi1'];
-        $res3 = $_POST['resi2'];
-        $res4 = $_POST['resi3'];
+        $resc = $_POST['resc'];
+        $resi1 = $_POST['resi1'];
+        $resi2 = $_POST['resi2'];
+        $resi3 = $_POST['resi3'];
         $comple = $_POST['complejidad'];
-        $tema = $_POST['TemaPreg'];
+        $temTemaPrega = $_POST['TemaPreg'];
 
         $sql = "INSERT INTO Preguntas (Clave, Correo, Enunciado, RespCorrecta, RespIncorrecta1, RespIncorrecta2, RespIncorrecta3, Complejidad, Tema)
                        VALUES
-                                        (NULL, '$cor', '$preg', '$res1', '$res2', '$res3', '$res4', $comple, '$tema')";
+                                        (NULL, '$cor', '$preg', '$resc', '$resi1', '$resi2', '$resi3', $comple, '$TemaPregb')";
 
         //  die($sql);
         $result =   mysqli_query($conn, $sql);
