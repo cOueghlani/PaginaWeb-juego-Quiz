@@ -14,40 +14,44 @@
 
       <form id='fquestion' name='fquestion' action=’AddQuestion.php’>
 
-        <label for="pregunta">Enunciado de la pregunta(*)</label><br>
+        <!-- Correo del autor de la pregunta -->
+        <label for="correo">Correo(*) </label>
+        <input type="correo" id="correo" name="correo" required><br>
+
+        <!-- Enunciado de la pregunta -->
+        <label for="pregunta">Enunciado de la pregunta(*) </label>
         <input type=”text” id=pregunta name="pregunta" minlength=10 required><br>
 
-        <label for="email">Correo(*)</label><br>
-
-        <input type="email" id="email" name="email" required><br>
-
-        <label for="respuesta1">Respuesta correcta(*) </label><br>
+        <!-- Respuestas -->
+        <label for="respuesta1">Respuesta correcta(*) </label>
         <input type=”text” id=respuesta1 name="respuesta" required><br>
 
-        <label for="respuesta2">Respuesta incorrecta(*) </label><br>
+        <label for="respuesta2">Respuesta incorrecta(*) </label>
         <input type=”text” id=respuesta2 name="respuesta" required><br>
 
-        <label for="respuesta3">Respuesta incorrecta(*) </label><br>
+        <label for="respuesta3">Respuesta incorrecta(*) </label>
         <input type=”text” id=respuesta3 name="respuesta" required><br>
 
-        <label for="respuesta4">Respuesta incorrecta(*) </label><br>
+        <label for="respuesta4">Respuesta incorrecta(*) </label>
         <input type=”text” id=respuesta4 name="respuesta" required><br>
 
-        <label for="complejidad">Complejidad(*) </label><br>
+        <!-- Complejidad de la pregunta -->
+        <label for="complejidad">Complejidad(*) </label>
         <select id="complejidad" name="complejidad" required>
                 <option value="1">Baja</option>
                 <option value="2" selected>Media</option>
                 <option value="3">Alta</option>
-        </select>
-        <br>
-
-
-        <label for="temaPregunta">Tema de la pregunta(*): </label>
+        </select><br>
+        
+        <!-- Tema de la pregunta -->
+        <label for="temaPregunta">Tema de la pregunta(*): </label><br>
         <input type="text" id="temaPregunta" name="TemaPreg" required><br>
-        <input type="file" id="CargarImagen" accept="image/*" name="Imagen">
-        <img id="imagenprev" src="#" alt="" width="120px" height="120px" />
 
-        <br><br>
+        <!-- Cargar imagen-->
+        <input type="file" id="CargarImagen" accept="image/*" name="Imagen">
+        <img id="imagenprev" src="#" alt="" width="120px" height="120px" /><br><br>
+
+        <!-- Boton de enviar -->
         <button>Enviar</button>
 
       </form>

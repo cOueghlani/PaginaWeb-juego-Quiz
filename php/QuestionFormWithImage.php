@@ -51,10 +51,15 @@
         <label for="temaPregunta">Tema de la pregunta(*): </label>
         <input type="text" id="temaPregunta" name="TemaPreg" /><br>
 
+                
+        <!-- Imagen -->
         <input type="file" id="CargarImagen" /> <br>
-        <img id="imagenprev" src="#" alt="imagenprev" width="120px" height="120px" />
-        <br />
+        <img id="imagenprev" src="#" alt="imagenprev" width="120px" height="120px" /><br /><br />
+
+        
+        <!-- Boton de enviar -->
         <input type="submit" id="subir" name="subir" value="Enviar pregunta"/>
+
       </form>
     </div>
   </section>

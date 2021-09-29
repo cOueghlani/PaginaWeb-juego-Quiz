@@ -1,20 +1,26 @@
-
 $(document).ready(function () {
-    $("#subir").click(function () {
+    $("#fquestion").submit(function () {
      
-        if (($("#pregunta").val().length <10 || $("#respuesta1").val().length ==0 || $("#respuesta2").val().length ==0 || 
-        $("#respuesta3").val().length ==0 || $("#respuesta4").val().length ==0 || $("#temaPregunta").val().length == 0))
+        if (($("#pregunta").val().length <10 || $("#respuestac").val().length ==0 || $("#respuestai1").val().length ==0 || 
+        $("#respuestai2").val().length ==0 || $("#respuestai3").val().length ==0 || $("#temaPregunta").val().length == 0))
         {
             alert("Revisa que todos los campos esten rellenados");
+            event.preventDefault();
         }
         else
         {
-            if(validarcorreo())
-            alert("Pregunta enviada con exito");
+            if(!validarcorreo()){
+                alert("Correo no valido: " + $("#correo").val());
+                event.preventDefault();
+            }
+            else 
+               alert("Pregunta enviada con exito");
+               return;
         }
 
     });
 });
+
 function validarcorreo()
 {
     var regExpCorreoP = /^([a-zA-Z]+)((\.[a-zA-Z]+)?)@ehu\.(eus|es)$/;
@@ -23,7 +29,7 @@ function validarcorreo()
         return true;
     }
     else
-    alert("Correo no valido: " + $("#correo").val());
+        return false;
 }
 
 
