@@ -22,16 +22,16 @@
   
         <!-- Respuestas -->
         <label for="pregunta">Respuesta correcta(*): </label>
-        <input type="text" id="respuestac" name="resc"><br>
+        <input type="text" id="resc" name="resc"><br>
 
         <label for="pregunta">Respuesta incorrecta(*): </label>
-        <input type="text" id="respuestai1" name="resi1"><br>
+        <input type="text" id="resi1" name="resi1"><br>
 
         <label for="pregunta">Respuesta incorrecta(*): </label>
-        <input type="text" id="respuestai2" name="resi2"><br>
+        <input type="text" id="resi2" name="resi2"><br>
 
         <label for="pregunta">Respuesta incorrecta(*): </label>
-        <input type="text" id="respuestai3" name="resi3"><br>
+        <input type="text" id="resi3" name="resi3"><br>
 
 
         <!-- Complejidad de la pregunta -->
@@ -45,7 +45,7 @@
 
         <!-- Tema de la pregunta -->
         <label for="temaPregunta">Tema de la pregunta(*): </label>
-        <input type="text" id="temaPregunta" name="TemaPreg"><br><br>
+        <input type="text" id="TemaPreg" name="TemaPreg"><br><br>
 
         
         <!-- Boton de enviar -->

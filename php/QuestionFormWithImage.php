@@ -14,51 +14,49 @@
   <section class="main" id="s1">
     <div>
 
-      <form id='fquestion' name='fquestion' action="AddQuestion.php">
-
-        <!-- Correo del autor de la pregunta -->
-        <label for="correo">Correo electrónico(*): </label>
-        <input type="text" id="correo" name="correo"><br>
+  <form id='fquestion' name='fquestion' action="AddQuestionWithImage.php" method="POST" enctype="multipart/form-data" >
+<!-- Correo del autor de la pregunta -->
+<label for="correo">Correo electrónico(*): </label>
+        <input type="text" id="correo" name="correo"><br><br>
 
         <!-- Enunciado de la pregunta -->
-        <label for="pregunta">Enunciado de la pregunta(*): </label>
+        <label for="pregunta">Enunciado de la pregunta(*): </label><br>
         <input type="text" id="pregunta" name="pregunta"><br>
-
+  
         <!-- Respuestas -->
         <label for="pregunta">Respuesta correcta(*): </label>
-        <input type="text" id="respuesta1" name="res"><br>
+        <input type="text" id="resc" name="resc"><br>
 
         <label for="pregunta">Respuesta incorrecta(*): </label>
-        <input type="text" id="respuesta2" name="res"><br>
+        <input type="text" id="resi1" name="resi1"><br>
 
         <label for="pregunta">Respuesta incorrecta(*): </label>
-        <input type="text" id="respuesta3" name="res"><br>
+        <input type="text" id="resi2" name="resi2"><br>
 
         <label for="pregunta">Respuesta incorrecta(*): </label>
-        <input type="text" id="respuesta4" name="res"><br>
+        <input type="text" id="resi3" name="resi3"><br>
 
 
         <!-- Complejidad de la pregunta -->
-        <label>Complejidad(*):</label>
+        <label for="complejidad">Complejidad:</label>
         <select name="complejidad" id="complejidad">
-          <option value=1>Baja</option>
-          <option value=2>Media</option>
-          <option value=3>Alta</option>
-        </select>
-        <br>
+        <option value="1">Baja</option>
+        <option value="2">Media</option>
+        <option value="3">Alta</option>
+        </select><br>
+      
 
         <!-- Tema de la pregunta -->
         <label for="temaPregunta">Tema de la pregunta(*): </label>
-        <input type="text" id="temaPregunta" name="TemaPreg" /><br>
-
-                
+        <input type="text" id="TemaPreg" name="TemaPreg"><br><br>
+         
         <!-- Imagen -->
-        <input type="file" id="CargarImagen" /> <br>
-        <img id="imagenprev" src="#" alt="imagenprev" width="120px" height="120px" /><br /><br />
-
-        
+        <input name="archivo" id="archivo" type="file"/>        
+        <div id="imagenamostrar"></div>
         <!-- Boton de enviar -->
         <input type="submit" id="subir" name="subir" value="Enviar pregunta"/>
+
+        <input type="reset" id="reset" name="Eliminar" value="Borrar los campos" onclick="borrar()"/>
 
       </form>
     </div>

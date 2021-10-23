@@ -1,4 +1,4 @@
-$(document).ready(function () {
+/*$(document).ready(function () {
     $("#fquestion").submit(function () {
      
         if (($("#pregunta").val().length <10 || $("#respuestac").val().length ==0 || $("#respuestai1").val().length ==0 || 
@@ -15,7 +15,7 @@ $(document).ready(function () {
             }
             else 
                //alert("Pregunta enviada con exito");
-               return;
+               return false;
         }
 
     });
@@ -23,11 +23,11 @@ $(document).ready(function () {
 
 function validarcorreo()
 {
-    var regExpCorreoP = /^([a-zA-Z]+)((\.[a-zA-Z]+)?)@ehu\.(eus|es)$/;
-    var regExpCorreoA = /^[a-z]+[0-9]{3}@ikasle\.ehu\.(eus|es)$/;
+    var regExpCorreoP = '/^([a-zA-Z]+)((\.[a-zA-Z]+)?)@ehu\.(eus|es)$/';
+    var regExpCorreoA = '/^[a-z]+[0-9]{3}@ikasle\.ehu\.(eus|es)$/';
     if (regExpCorreoA.test($("#correo").val()) || regExpCorreoP.test($("#correo").val())) {
         return true;
     }
     else
         return false;
-}
+}*/
