@@ -1,0 +1,72 @@
+{
+    "assessmentItems": [
+        {
+            "subject": "asda",
+            "author": "finda@ehu.eus",
+            "itemBody": {
+                "p": "asadsadsdasadsadsdasads"
+            },
+            "correctResponse": {
+                "value": "s"
+            },
+            "incorrectResponses": {
+                "value": [
+                    "sad",
+                    "s",
+                    "ds"
+                ]
+            }
+        },
+        {
+            "subject": "vdxvs",
+            "author": "finda@ehu.eus",
+            "itemBody": {
+                "p": "afkjhdskdsdsdfj"
+            },
+            "correctResponse": {
+                "value": "asd"
+            },
+            "incorrectResponses": {
+                "value": [
+                    "shjhj",
+                    "dkjhekjgsdhkj",
+                    "kjdhjk"
+                ]
+            }
+        },
+        {
+            "subject": "joha",
+            "author": "finda@ehu.eus",
+            "itemBody": {
+                "p": "hhjjhjasdasdas"
+            },
+            "correctResponse": {
+                "value": "jhjh"
+            },
+            "incorrectResponses": {
+                "value": [
+                    "hjkjh",
+                    "hhj",
+                    "j"
+                ]
+            }
+        },
+        {
+            "subject": "slakdj salkjd lsajd",
+            "author": "prueba027@ikasle.ehu.eus",
+            "itemBody": {
+                "p": " asldjs aldlksaj dlsajkd ertyuiop"
+            },
+            "correctResponse": {
+                "value": "dsal kjdalskjd salkjd"
+            },
+            "incorrectResponses": {
+                "value": [
+                    "sdlak jdlksajd sakjd lsajd",
+                    "dlak sjdslksajd laksjd",
+                    "slak jdlkasj dlksajd lsa"
+                ]
+            }
+        }
+    ]
+}

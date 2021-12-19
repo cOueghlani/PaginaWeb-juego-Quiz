@@ -1,34 +1,60 @@
-/*function validarFormulario() {
 
-    //Variables
-    var correo = document.getElementById('correo').value;
-    var enunciado = document.getElementById('pregunta').value;
-    var resp1 = document.getElementById('respuesta1').value;
-    var resp2 = document.getElementById('respuesta2').value;
-    var resp3 = document.getElementById('respuesta3').value;
-    var resp4 = document.getElementById('respuesta4').value;
-    var cod = document.getElementById("complejidad").value;
-    var tema = document.getElementById('temaPregunta').value;
+function validacion() {
+    
+    var correo = document.fquestion.correo.value;
+    var enun = document.fquestion.enun.value;
+    var correct = document.fquestion.correct.value;
+    var inc1 = document.fquestion.inc1.value;
+    var inc2 = document.fquestion.inc2.value;
+    var inc3 = document.fquestion.inc3.value;
+    var dif = document.fquestion.dif.value
+    var tema = document.fquestion.tema.value;
 
-    //Pregunta extensa
-    if (enunciado.length < 10) {
-        alert('La pregunta debe de ser mas extensa')
-    }
-    else {
-        //Campos completos
-        if (correo.length == 0 || resp1.length == 0 || resp2.length == 0 ||
-            resp3.length == 0 || resp4.length == 0 || tema.length == 0) {
-            alert('Revisa que todos los campos esten completos');
+    if( correo == '' || correo == null) {
+        alert( 'Debes introducir un correo electronico.');
+    return false;
+    } else{
+        if(!validacionEmail(correo)){
+            alert('Debes introducir una dirección de correo válida.')
             return false;
         }
-        //Verificación de correo
-        var regExpCorreoP = /^([a-zA-Z]+)((\.[a-zA-Z]+)?)@ehu\.(eus|es)$/;
-        var regExpCorreoA = /^[a-z]+[0-9]{3}@ikasle\.ehu\.(eus|es)$/;
-        if (regExpCorreoA.test(correo) || regExpCorreoP.test(correo)) {
-            alert('Pregunta enviada con exito');
-            return true;
-        }
-        alert('Ha ocurrido algun problema');
+    }
+    if( enun == '' || enun == null ) {
+        alert( 'Debes introducir una pregunta.' );
         return false;
     }
-}*/
+    if( correct == '' || correct == null) {
+        alert( 'Debes introducir una respuesta correcta.' );
+        return false;
+    }
+    if( inc1 == '' || inc1 == null) {
+        alert( 'Debes introducir una respuesta incorrecta 1.' );
+        return false;
+    }
+    if( inc2 == '' || inc2 == null) {
+        alert( 'Debes introducir una respuesta incorrecta 2.' );
+        return false;
+    }
+    if( inc3 == ''  || inc3 == null) {
+        alert( 'Debes introducir una respuesta incorrecta 3.' );
+        return false;
+    }
+    if( dif == ''  || dif == null) {
+        alert( 'Debes elegir una complejidad.' );
+        return false;
+    }
+    if( tema == ''  || tema == null) {
+        alert( 'Debes especificar un tema.' );
+        return false;
+    }
+    return( true );
+}
+
+function validacionEmail(correo){
+    //Forma mas sencilla de validacion de email -> expresiones regulares.
+    const er = /^([a-zA-Z]+[0-9]{3})@ikasle\.ehu\.(eus|es)$/;
+    const er2 = /^[a-zA-Z]+\.[a-zA-Z]+@ehu\.(eus|es)$/;
+    const er3 = /^[a-zA-Z]+@ehu\.(eus|es)$/;
+    return er.test(String(correo).toLowerCase()) && er2.test(String(correo).toLowerCase()) && er3.test(String(correo).toLowerCase());
+
+}

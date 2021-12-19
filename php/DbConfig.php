@@ -1,9 +1,9 @@
 <?php
-$local=0; //0 para la nube
-if ($local==1){
+$local=0; // 1 para la nube; 0 local
+if ($local==0){
     $server="localhost";
-    $user="root";
-    $pass="";
+    $user="cristina"; //    $user="root"; 
+    $pass="oQMwATauFGbodWZ192Y_";   //    $pass="";
     $basededatos="quiz";
 }
 else{

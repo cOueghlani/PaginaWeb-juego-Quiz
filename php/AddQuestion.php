@@ -1,64 +1,80 @@
-  <!DOCTYPE html>
-  <html>
+<?php 
+session_start();
 
+	if(isset($_SESSION['correo'])){	
+        if ($_SESSION['correo'] == "admin@ehu.es") {
+			echo 
+				"<script> 
+					alert('Debes de iniciar sesion como usuario');
+                    window.location.href='Layout.php';
+				</script>";
+		}
+	}else{
+		echo 
+			"<script> 
+					alert('Debes de iniciar sesion como usuario');
+                    window.location.href='Layout.php';
+			</script>";	
+	}
+?>
+<!DOCTYPE html>
+<html>
   <head>
-    <?php include '../html/Head.html' ?>
+    <?php include '../html/Head.html'?>
   </head>
-
   <body>
     <?php include '../php/Menus.php' ?>
     <section class="main" id="s1">
-      <div>
+    <div>
+      <?php
+      
+      //Inicializamos las variables que van a contener la información enviada por el formulario de login
+      $correo = ""; 
+      $enun = "";
+      $correct = "";
+      $inc1 = "";
+      $inc2 = "";
+      $inc3 = "";
+      $compl = "";
+      $tema = "";
+      //die(print_r($_POST,1));
 
-        <!-- Código PHP para añadir una pregunta sin imagen -->
+      if (isset($_POST['botonPreg'])){ //Si se ha pulsado el submit con nombre "login" se comienza a procesar el formulario
 
-        <?php
+        $correo = $_POST['correo']; 
+        $enun = $_POST['enun'];
+        $correct = $_POST['correct'];
+        $inc1 = $_POST['inc1'];
+        $inc2 = $_POST['inc2'];
+        $inc3 = $_POST['inc3'];
+        $compl = $_POST['dif'];
+        $tema = $_POST['tema'];
 
-
-        // die(print_r($_POST,1));
-
+        //Conectamos con la base de datos mysql
         include 'DbConfig.php';
-        // Create connection with BD
         $conn = mysqli_connect($server, $user, $pass, $basededatos);
-        // Check connection
-        if (!$conn) {
+        $conn->set_charset("utf8");
+
+        if(!$conn){
           die("Connection failed: " . mysqli_connect_error());
         }
-
-
-        // $sql = "SELECT Clave FROM preguntas";
-        // $result = mysqli_query($conn, $sql);
-
-        // Taking all 8 values from the form data(inputi) --> el name
-        $cor = $_POST['correo'];
-        $preg = $_POST['pregunta'];
-        $resc = $_POST['resc'];
-        $resi1 = $_POST['resi1'];
-        $resi2 = $_POST['resi2'];
-        $resi3 = $_POST['resi3'];
-        $comple = $_POST['complejidad'];
-        $tempreg = $_POST['TemaPreg'];
-
-        $sql = "INSERT INTO preguntas (id_Pregunta, correo, enunciado, respcorrecta, respincorrecta1, respincorrecta2, respincorrecta3, complejidad, tema)
-                       VALUES
-                                        (NULL, '$cor', '$preg', '$resc', '$resi1', '$resi2', '$resi3', $comple, '$tempreg')";
-
-        //  die($sql);
-        $result =   mysqli_query($conn, $sql);
-
-        if (mysqli_affected_rows($conn) > 0) {
-          // output data of each row
-          echo "1 result <br>";
-          echo "<a href='ShowQuestions.php'>Ver todos las preguntas</a>";
-        } else {
-        echo "Algo ha salido mal";
-      }
-        mysqli_close($conn);
-        ?>
-
-      </div>
+        $sql = "INSERT INTO preguntas (correo, enun, correct, inc1, inc2, inc3, compl, tema) VALUES ('$correo', '$enun', '$correct', '$inc1', '$inc2', '$inc3', '$compl', '$tema')";
+        $anadir = mysqli_query($conn, $sql);
+        if(!$anadir){
+          echo "<h3>Se ha producido un error al intentar insertar la pregunta en la base de datos. :(</h3>";
+          echo "<br>";
+          echo "<a href="."QuestionFormWithImage.php".">VOLVER A INSERTAR PREGUNTA</a>";
+        }
+        else{
+          echo "<h3>Se ha introducido la pregunta en la base de datos. :)</h3>";
+          echo "<br>";
+          echo "<a href="."ShowQuestions.php".">VISUALIZAR PREGUNTAS</a>";
+          mysqli_close($conn);
+        }
+      }	
+      ?>
+    </div>
     </section>
     <?php include '../html/Footer.html' ?>
   </body>
-
-  </html>
+</html>
